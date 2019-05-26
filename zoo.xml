@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE zoo SYSTEM "zoo.dtd">
+<?xml-stylesheet href="zoo.css"?>
 <zoo>
 	<zwierzeta>
 		<ssaki>
