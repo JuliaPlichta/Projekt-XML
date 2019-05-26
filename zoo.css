@@ -1,0 +1,163 @@
+zoo {
+	display: block;
+	float: center;
+	width: 650px;
+    height: auto;
+    border: 2px dotted darkblue;
+    margin: auto;
+	padding: 10px;
+	background-color: lightcyan;
+	overflow: auto;
+}
+
+zoo::before {
+	display: block;
+    content: "Zielone Zoo";
+	letter-spacing: 5px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #4CAF50;
+	font-family: "Courier New";
+	line-height: 1.8;
+	font-size: 30px;
+	margin-bottom: 7px;
+	border: 3px dotted yellow;
+	
+}
+
+zwierzeta {
+	display: block;
+	border: 3px dotted yellow;
+	float: left;
+	width: 300px;
+	padding: 5px;
+}
+
+zwierzeta::before {
+	display: block;
+	font-size: 20px;
+	color: darkred;
+	font-weight: bold;
+	content: "Nasze zwierzęta:";
+
+}
+
+zwierze {
+	display: block;
+	font-size: 17px;
+	margin-left: 3px;
+}
+
+zwierze data_urodzenia {
+	font-size: 14px;
+	margin-left: 10px;
+	display: block;
+}
+
+zwierze data_urodzenia::before {
+	content: " data ur.: ";
+}
+masa {
+	display: block;
+	margin-left: 10px;
+	font-size: 14px;
+}
+masa::before {
+	content: " waga: ";
+}
+
+masa[jednostka="kg"]::after {
+	content: " kg";
+}
+
+ssaki{
+	display: block;
+    
+}
+ssaki::before {
+	display: block;
+	margin-left: 30px;
+	font-size: 18px;
+	content: "Ssaki:"
+}
+ptaki{
+	display: block;
+}
+ptaki::before {
+	display: block;
+	margin-left: 30px;
+	font-size: 18px;
+	content: "Ptaki:"
+}
+
+
+
+imie {
+	color: blue;
+}
+opiekun imie {
+	color: hotpink;
+}
+weterynarz imie {
+	color: teal;
+}
+
+opiekunowie {
+	display: block;
+	float: right;
+	border: 3px dotted yellow;
+	width: 310px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+opiekunowie::before {
+	display: block;
+	font-size: 20px;
+	color: darkred;
+	font-weight: bold;
+	content: "Nasi opiekunowie:"
+}
+
+opiekun {
+	display: block;
+	margin: 9px;
+}
+
+data_urodzenia {
+	display: none;
+}
+
+data_zatrudnienia {
+	font-size: 14px;
+	display: block;
+}
+data_zatrudnienia::before {
+	content: "z nami od: ";
+}
+
+weterynarze {
+	display: block;
+	float: right;
+	border: 3px dotted yellow;
+	width: 310px;
+	padding: 5px;
+	margin-top: 7px;
+	font-size: 20px;
+
+}
+
+weterynarze::before {
+	display: block;
+	font-size: 20px;
+	color: darkred;
+	font-weight: bold;
+	content: "Nasi weterynarze:"
+}
+
+weterynarz {
+	display: block;
+	margin: 9px;
+}
+
+
