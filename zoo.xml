@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE zoo SYSTEM "zoo.dtd">
+<zoo>
+	<zwierzeta>
+		<ssaki>
+			<drapiezne>
+				<zwierze id="z1" id_opiekuna="o1" numer_klatki="k1">
+					<imie>Leon</imie>
+					<plec>samiec</plec>
+					<gatunek>tygrys</gatunek>
+					<masa jednostka="kg">320</masa>
+					<data_urodzenia>03-04-2014</data_urodzenia>
+				</zwierze>
+				<zwierze id="z2" id_opiekuna="o1" numer_klatki="k2">
+					<imie>Gerard</imie>
+					<plec>samiec</plec>
+					<gatunek>lew</gatunek>
+					<masa jednostka="kg">180</masa>
+					<data_urodzenia>24-05-2016</data_urodzenia>
+				</zwierze>
+				<zwierze id="z3" id_opiekuna="o1" numer_klatki="k2">
+					<imie>Igra</imie>
+					<plec>samica</plec>
+					<gatunek>lew</gatunek>
+					<masa jednostka="kg">130</masa>
+					<data_urodzenia>24-05-2016</data_urodzenia>
+				</zwierze>
+				<zwierze id="z4" id_opiekuna="o2" numer_klatki="k3">
+					<imie>Pola</imie>
+					<plec>samica</plec>
+					<gatunek>niedźwiedź brunatny</gatunek>
+					<masa jednostka="kg">435</masa>
+					<data_urodzenia>12-03-2015</data_urodzenia>
+				</zwierze>
+			</drapiezne>
+			
+			<gryzonie>
+				<zwierze id="z5" id_opiekuna="o3" numer_klatki="k4">
+					<imie>Grześ</imie>
+					<plec>samiec</plec>
+					<gatunek>bóbr kanadyjski</gatunek>
+					<masa jednostka="kg">30</masa>
+					<data_urodzenia>07-05-2017</data_urodzenia>
+				</zwierze>
+				<zwierze id="z6" id_opiekuna="o3" numer_klatki="k5">
+					<imie>Silvan</imie>
+					<plec>samiec</plec>
+					<gatunek>jeżozwierz afrykański</gatunek>
+					<masa jednostka="kg">12</masa>
+					<data_urodzenia>16-04-2019</data_urodzenia>
+				</zwierze>
+			</gryzonie>
+			
+			<naczelne>
+				<zwierze id="z7" id_opiekuna="o4" numer_klatki="k6">
+					<imie>Marlena</imie>
+					<plec>samica</plec>
+					<gatunek>goryl nizinny</gatunek>
+					<masa jednostka="kg">75</masa>
+					<data_urodzenia>02-04-2013</data_urodzenia>
+				</zwierze>
+				<zwierze id="z8" id_opiekuna="o4" numer_klatki="k6">
+					<imie>Olek</imie>
+					<plec>samiec</plec>
+					<gatunek>szympans zwyczajny</gatunek>
+					<masa jednostka="kg">95</masa>
+					<data_urodzenia>26-05-2011</data_urodzenia>
+				</zwierze>
+			</naczelne>
+			
+			<parzystokopytne>
+			</parzystokopytne>
+			<torbacze>
+			</torbacze>	
+		</ssaki>
+		
+		<ptaki>
+			<kiwi>
+				<zwierze id="z9" id_opiekuna="o5" numer_klatki="k7">
+					<imie>Jacky</imie>
+					<plec>samiec</plec>
+					<gatunek>kiwi brunatny</gatunek>
+					<masa jednostka="kg">1.7</masa>
+					<data_urodzenia>11-04-2014</data_urodzenia>
+				</zwierze>
+			</kiwi>
+			
+			<pingwiny>
+				<zwierze id="z10" id_opiekuna="o5" numer_klatki="k8">
+					<imie>Eliza</imie>
+					<plec>samica</plec>
+					<gatunek>pingwin królewski</gatunek>
+					<masa jednostka="kg">12</masa>
+					<data_urodzenia>01-07-2013</data_urodzenia>
+				</zwierze>
+			</pingwiny>
+		</ptaki>
+		
+		<plazy>
+		</plazy>
+		<gady>
+		</gady>
+	</zwierzeta>
+
+	<opiekunowie>
+		<opiekun id_opiekuna="o1">
+			<imie>Jan</imie>
+			<nazwisko>Kowalski</nazwisko>
+			<data_urodzenia>21-05-1981</data_urodzenia>
+			<data_zatrudnienia>01-03-2010</data_zatrudnienia>
+		</opiekun>
+		<opiekun id_opiekuna="o2">
+			<imie>Igor</imie>
+			<nazwisko>Nowak</nazwisko>
+			<data_urodzenia>11-01-1978</data_urodzenia>
+			<data_zatrudnienia>01-03-2010</data_zatrudnienia>
+		</opiekun>
+		<opiekun id_opiekuna="o3">
+			<imie>Monika</imie>
+			<nazwisko>Wolska</nazwisko>
+			<data_urodzenia>14-12-1986</data_urodzenia>
+			<data_zatrudnienia>01-02-2012</data_zatrudnienia>
+		</opiekun>
+		<opiekun id_opiekuna="o4">
+			<imie>Elzbieta</imie>
+			<nazwisko>Skalska</nazwisko>
+			<data_urodzenia>20-10-1992</data_urodzenia>
+			<data_zatrudnienia>06-06-2015</data_zatrudnienia>
+		</opiekun>
+		<opiekun id_opiekuna="o5">
+			<imie>Aleks</imie>
+			<nazwisko>Wozniak</nazwisko>
+			<data_urodzenia>17-02-1985</data_urodzenia>
+			<data_zatrudnienia>01-03-2010</data_zatrudnienia>
+		</opiekun>
+	</opiekunowie>
+	
+	<weterynarze>
+		<weterynarz id_weterynarza="w1">
+			<imie>Maciej</imie>
+			<nazwisko>Kulesza</nazwisko>
+			<data_urodzenia>05-02-1979</data_urodzenia>
+		</weterynarz>
+	</weterynarze>
+	
+	<klatki>
+		<klatka numer_klatki="k1" id_weterynarza="w1"/>
+		<klatka numer_klatki="k2" id_weterynarza="w1"/>
+		<klatka numer_klatki="k3" id_weterynarza="w1"/>
+		<klatka numer_klatki="k4" id_weterynarza="w1"/>
+		<klatka numer_klatki="k5" id_weterynarza="w1"/>
+		<klatka numer_klatki="k6" id_weterynarza="w1"/>
+		<klatka numer_klatki="k7" id_weterynarza="w1"/>
+		<klatka numer_klatki="k8" id_weterynarza="w1"/>
+	</klatki>
+</zoo>
