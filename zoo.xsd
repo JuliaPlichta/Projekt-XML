@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!-- definition of simple elements-->
+<xsd:element name="imie" type="nazwatype"/>
+<xsd:element name="nazwisko" type="nazwatype"/>
+<xsd:element name="plec" type="plectype"/>
+<xsd:element name="gatunek" type="xsd:string"/>
+<xsd:element name="masa" type="masatype"/>
+<xsd:element name="data_urodzenia" type="datatype"/>
+<xsd:element name="data_zatrudnienia" type="datatype"/>
+
+<!-- definition of attributes-->
+<xsd:attribute name="jednostka" type="jednostkatype"/>
+<xsd:attribute name="id" type="id_zwierzecia_type"/>
+<xsd:attribute name="id_opiekuna" type="id_opiekuna_type"/>
+<xsd:attribute name="numer_klatki" type="numer_klatki_type"/>
+<xsd:attribute name="id_weterynarza" type="id_weterynarza_type"/>
+
+<!-- definition of types-->
+<xsd:simpleType name="nazwatype">
+	 <xsd:restriction base="xsd:string">
+		<xsd:minLength value="3"/>
+		<xsd:maxLength value="50"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="plectype">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="samiec"/>
+		<xsd:enumeration value="samica"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="masatype">
+	<xsd:simpleContent>
+		 <xsd:extension base="xsd:string">
+			<xsd:attribute name="jednostka" type="jednostkatype"/>
+		 </xsd:extension>
+	</xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:simpleType name="datatype">
+	<xsd:restriction base="xsd:string">
+		 <xsd:pattern value="\d{2}\-\d{2}\-\d{4}"></xsd:pattern>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="jednostkatype">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="t"/>
+		<xsd:enumeration value="kg"/>
+		<xsd:enumeration value="dg"/>
+		<xsd:enumeration value="g"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="id_zwierzecia_type">
+	<xsd:restriction base="xsd:string">
+		 <xsd:pattern value="z\d+"></xsd:pattern>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="id_opiekuna_type">
+	<xsd:restriction base="xsd:string">
+		 <xsd:pattern value="o\d+"></xsd:pattern>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="id_weterynarza_type">
+	<xsd:restriction base="xsd:string">
+		 <xsd:pattern value="w\d+"></xsd:pattern>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="numer_klatki_type">
+	<xsd:restriction base="xsd:string">
+		 <xsd:pattern value="k\d+"></xsd:pattern>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<!-- definition of complex elements-->
+<xsd:element name="zwierze">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="imie"/>
+			<xsd:element ref="plec"/>
+			<xsd:element ref="gatunek"/>
+			<xsd:element ref="masa"/>
+			<xsd:element ref="data_urodzenia"/>
+		</xsd:sequence>
+		<xsd:attribute ref="id"/>
+		<xsd:attribute ref="id_opiekuna"/>
+		<xsd:attribute ref="numer_klatki"/>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="drapiezne">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="gryzonie">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="naczelne">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="parzystokopytne">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="torbacze">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="ssaki">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="drapiezne" minOccurs="0"/>
+			<xsd:element ref="gryzonie" minOccurs="0"/>
+			<xsd:element ref="naczelne" minOccurs="0"/>
+			<xsd:element ref="parzystokopytne" minOccurs="0"/>
+			<xsd:element ref="torbacze" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="kiwi">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="pingwiny">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="zwierze" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="ptaki">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="kiwi" minOccurs="0"/>
+			<xsd:element ref="pingwiny" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="plazy">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:any minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="gady">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:any minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="zwierzeta">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="ssaki" minOccurs="0"/>
+			<xsd:element ref="ptaki" minOccurs="0"/>
+			<xsd:element ref="plazy" minOccurs="0"/>
+			<xsd:element ref="gady" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="opiekun">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="imie"/>
+			<xsd:element ref="nazwisko"/>
+			<xsd:element ref="data_urodzenia"/>
+			<xsd:element ref="data_zatrudnienia"/>
+		</xsd:sequence>
+		<xsd:attribute ref="id_opiekuna"/>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="opiekunowie">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="opiekun" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="weterynarz">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="imie"/>
+			<xsd:element ref="nazwisko"/>
+			<xsd:element ref="data_urodzenia"/>
+		</xsd:sequence>
+		<xsd:attribute ref="id_weterynarza"/>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="weterynarze">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="weterynarz" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="klatka">
+  <xsd:complexType>
+    <xsd:attribute name="numer_klatki" type="numer_klatki_type"/>
+	<xsd:attribute name="id_weterynarza" type="id_weterynarza_type"/>
+  </xsd:complexType>
+</xsd:element> 
+
+<xsd:element name="klatki">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="klatka" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="zootype">
+	<xsd:sequence>
+		<xsd:element ref="zwierzeta"/>
+		<xsd:element ref="opiekunowie"/>
+		<xsd:element ref="weterynarze"/>
+		<xsd:element ref="klatki"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="zoo" type="zootype">
+
+	<!-- ID OPIEKUNA -->
+	<xsd:key name="id_opiekunaKey" >  
+		<xsd:selector xpath="opiekunowie/opiekun" />  
+		<xsd:field xpath="@id_opiekuna"/>  
+	</xsd:key>
+	
+	<xsd:keyref name="id_opiekunaRef" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/drapiezne/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="id_opiekunaRef2" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/gryzonie/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="id_opiekunaRef3" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/naczelne/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="id_opiekunaRef4" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/parzystokopytne/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="id_opiekunaRef5" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/torbacze/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<!-- ptaki -->
+	<xsd:keyref name="id_opiekunaRef6" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ptaki/kiwi/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="id_opiekunaRef7" refer="id_opiekunaKey">  
+		<xsd:selector xpath="zwierzeta/ptaki/pingwiny/zwierze" />  
+		<xsd:field xpath="@id_opiekuna" /> 
+	</xsd:keyref> 
+	
+	<!-- NUMER KLATKI -->
+	<xsd:key name="numer_klatkiKey" >  
+		<xsd:selector xpath="klatki/klatka" />  
+		<xsd:field xpath="@numer_klatki"/>  
+	</xsd:key>
+	
+	<xsd:keyref name="numer_klatkiRef" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/drapiezne/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="numer_klatkiRef2" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/gryzonie/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="numer_klatkiRef3" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/naczelne/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="numer_klatkiRef4" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/parzystokopytne/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="numer_klatkiRef5" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ssaki/torbacze/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="numer_klatkiRef6" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ptaki/kiwi/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<xsd:keyref name="numer_klatkiRef7" refer="numer_klatkiKey">  
+		<xsd:selector xpath="zwierzeta/ptaki/pingwiny/zwierze" />  
+		<xsd:field xpath="@numer_klatki" /> 
+	</xsd:keyref> 
+	
+	<!-- ID WETERYNARZA -->
+	<xsd:key name="id_weterynarzaKey" >  
+		<xsd:selector xpath="weterynarze/weterynarz" />  
+		<xsd:field xpath="@id_weterynarza"/>  
+	</xsd:key>
+	
+	<xsd:keyref name="id_weterynarzaRef" refer="id_weterynarzaKey">  
+		<xsd:selector xpath="klatki/klatka" />  
+		<xsd:field xpath="@id_weterynarza" /> 
+	</xsd:keyref> 
+	
+	
+</xsd:element>
+
+</xsd:schema>
