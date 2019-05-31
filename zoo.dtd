@@ -1,0 +1,44 @@
+<!ELEMENT zoo (zwierzeta, opiekunowie, weterynarze, klatki)>
+<!ELEMENT zwierzeta (ssaki?, ptaki?, plazy?, gady?)>
+<!ELEMENT ssaki (drapiezne?, gryzonie?, naczelne?, parzystokopytne?, torbacze?)>
+ <!ELEMENT drapiezne (zwierze*)>
+ <!ELEMENT gryzonie (zwierze*)>
+ <!ELEMENT naczelne (zwierze*)>
+ <!ELEMENT parzystokopytne (zwierze*)>
+ <!ELEMENT torbacze (zwierze*)>
+
+<!ELEMENT ptaki (kiwi?, pingwiny?)>
+ <!ELEMENT kiwi (zwierze*)>
+ <!ELEMENT pingwiny (zwierze*)>
+
+<!ELEMENT plazy ANY>
+<!ELEMENT gady ANY>
+
+<!ELEMENT zwierze (imie, plec, gatunek, masa, data_urodzenia)>
+<!ATTLIST zwierze 	id  	ID #REQUIRED
+					id_opiekuna IDREF #REQUIRED
+					numer_klatki IDREF #REQUIRED>
+
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT plec (#PCDATA)>
+<!ELEMENT gatunek (#PCDATA)>
+<!ELEMENT masa (#PCDATA)>
+<!ATTLIST masa jednostka CDATA "kg">
+<!ELEMENT data_urodzenia (#PCDATA)>
+
+<!ENTITY % dane_personalne "imie, nazwisko, data_urodzenia">
+ <!ELEMENT nazwisko (#PCDATA)>
+ <!ELEMENT data_zatrudnienia (#PCDATA)>
+ 
+<!ELEMENT opiekunowie (opiekun+)>
+ <!ELEMENT opiekun (%dane_personalne;, data_zatrudnienia)>
+ <!ATTLIST opiekun id_opiekuna ID #REQUIRED>
+ 
+<!ELEMENT weterynarze (weterynarz+)>
+ <!ELEMENT weterynarz (%dane_personalne;)>
+ <!ATTLIST weterynarz id_weterynarza ID #REQUIRED>
+
+<!ELEMENT klatki (klatka+)>
+ <!ELEMENT klatka EMPTY>
+ <!ATTLIST klatka numer_klatki ID #REQUIRED>
+ <!ATTLIST klatka id_weterynarza IDREF #REQUIRED>
